@@ -1,74 +1,74 @@
-let msgPronta = "";
-let msg = "";
+let textoPronto = "";
+let texto = "";
 
 function retornaFrase() {
-msg = document.getElementById("msgParaCriptografar").value;
-return msg;
+texto = document.getElementById("textoParaCriptografar").value;
+return texto;
 }
 
-function msgCriptografada() {
+function textoCriptografado() {
 var text = document.getElementById("text");
-var msgInput = retornaFrase();
+var textoInput = retornaFrase();
 
-msgInicial = msgInput;
-msg = msgInput;
+textoInicial = textoInput;
+texto = textoInput;
 
-if (msgInput === "") {
+if (textoInput === "") {
 alert("Digite um texto");
 } else {
-var msgCriptografada = msgInput.split("");
-for (var i = 0; i < msgCriptografada.length; i++) {
-   if (msgCriptografada[i] == "e") {
-      msgCriptografada[i] = "enter";
-   }
-
-   if (msgCriptografada[i] == "i") {
-      msgCriptografada[i] = "imes";
-   }
-
-   if (msgCriptografada[i] == "a") {
-      msgCriptografada[i] = "ai";
-   }
-   if (msgCriptografada[i] == "o") {
-      msgCriptografada[i] = "ober";
-   }
-   if (msgCriptografada[i] == "u") {
-      msgCriptografada[i] = "ufat";
-   }
+var textoCriptografado = textoInput.split("");
+for (var i = 0; i < textoCriptografado.length; i++) {
+if (textoCriptografado[i] == "e") {
+textoCriptografado[i] = "enter";
 }
 
-msgInput = msgCriptografada.join("");
+if (textoCriptografado[i] == "i") {
+textoCriptografado[i] = "imes";
+}
+
+if (textoCriptografado[i] == "a") {
+textoCriptografado[i] = "ai";
+}
+if (textoCriptografado[i] == "o") {
+textoCriptografado[i] = "ober";
+}
+if (textoCriptografado[i] == "u") {
+textoCriptografado[i] = "ufat";
+}
+}
+
+textoInput = textoCriptografado.join("");
 document.querySelector("#btnTextoCopiado").style.display = "none";
-document.querySelector("#escondeMsg").style.display = "none";
+document.querySelector("#escondeTexto").style.display = "none";
 document.querySelector("#btnCopiar").style.display = "block";
-document.getElementById("msgParaCriptografar").value = "";
-text.innerHTML = msgInput;
-msgPronta = msgInput;}
+document.getElementById("textoParaCriptografar").value = "";
+text.innerHTML = textoInput;
+textoPronto = textoInput;}
 }
 
 function copiaTexto() {
-navigator.clipboard.writeText(msgPronta).then(() => { });
+navigator.clipboard.writeText(textoPronto).then(() => { });
 document.querySelector("#btnCopiar").style.display = "none";
 document.querySelector("#btnTextoCopiado").style.display = "block";
 }
 
 function descriptografar() {
-var msg = retornaFrase();
-var msgDescriptografada;
+var texto = retornaFrase();
+var textoDescriptografado;
 var text = document.getElementById("text");
 
-if (msgPronta === "") {
+if (textoPronto === "") {
 alert("Não existe texto para ser descriptografado ainda");
-} else if (msg === "") {
+} else if (texto === "") {
 alert("Copie e cole o texto que foi criptografado");
 } else {
-msgDescriptografada = msgPronta
+textoDescriptografado = textoPronto
 .replace(/enter/g, "e")
 .replace(/imes/g, "i")
 .replace(/ai/g, "a")
 .replace(/ober/g, "o")
 .replace(/ufat/g, "u");
-text.innerHTML = msgDescriptografada;
+text.innerHTML = textoDescriptografado;
 }
 }
 
@@ -81,4 +81,3 @@ return clearInterval(typer);
 }
 }, interval);
 }
-

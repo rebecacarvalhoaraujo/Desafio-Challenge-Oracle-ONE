@@ -1,8 +1,147 @@
-html {
-    background-color: #e5e5e5;
-    font-family: "inter", sans-serif;
-}
+   body {
+     background-color: #e5e5e5;
+     font-family: 'Inter', sans-serif;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 1.5;
+   }
 
-.logo {
-    width: 50px;
-}
+   header {
+     display: flex;
+     align-items: center;
+     padding: 10px;
+   }
+
+   .logoAlura {
+     width: 50px;
+   }
+
+   section {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 10px;
+   }
+
+   input[type="text"],
+   textarea {
+     width: 100%;
+     padding: 10px;
+     border: 2px solid #0a3871;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     font-size: 16px;
+     color: #0a3871;
+     resize: none;
+   }
+
+   .msgUsuario {
+     display: flex;
+     align-items: center;
+     margin: 10px;
+   }
+
+   .info {
+     width: 50px;
+     margin-right: 10px;
+   }
+
+   .botoes {
+     display: flex;
+     justify-content: space-evenly;
+     margin: 10px;
+   }
+
+   .btn {
+     padding: 10px;
+     border: 2px solid #0a3871;
+     border-radius: 5px;
+     font-size: 16px;
+     color: #0a3871;
+     cursor: pointer;
+   }
+
+   .btn:hover {
+     background-color: #0a3871;
+     color: #fff;
+   }
+
+   .msg {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 10px;
+   }
+
+   .msgCriptografada {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 10px;
+     height: 100px;
+     border: 2px solid #0a3871;
+     border-radius: 5px;
+     padding: 10px;
+     font-size: 16px;
+     color: #0a3871;
+   }
+
+   #escondeMsg {
+     display: none;
+   }
+
+   #btnCopiar {
+     display: flex;
+     justify-content: center;
+     margin: 10px;
+   }
+
+   #btnTextoCopiado {
+     display: none;
+     justify-content: center;
+     margin: 10px;
+   }
+
+   .copiar {
+     padding: 10px;
+     border: 2px solid #ffa500;
+     border-radius: 5px;
+     font-size: 16px;
+     color: #ffa500;
+     cursor: pointer;
+   }
+
+   .copiar:hover {
+     background-color: #ffa500;
+     color: #fff;
+   }
+
+   footer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #0a3871;
+     color: #fff;
+     height: 50px;
+   }
+
+   .autor {
+     text-align: center;
+     font-size: 16px;
+     font-weight: bold;
+     margin: 10px;
+   }
+
+   /* Media Queries */
+
+   @media screen and (max-width: 768px) {
+     header {
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+     }
+
+     .logoAlura {
+       margin-bottom: 10px;
+     }
+   }
